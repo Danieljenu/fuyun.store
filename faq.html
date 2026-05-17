@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ – SootheTap</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2;
+      --ink: #1a1714;
+      --accent: #c97d4e;
+      --muted: #7a6f66;
+      --border: #e8e0d6;
+    }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      padding: 3rem 1.5rem;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent);
+    }
+    .category-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin: 2rem 0 0.8rem;
+    }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+      background: #fff;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 1rem 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 500;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-question:hover { background: #fff8f3; }
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 0.93rem;
+      color: var(--muted);
+      padding: 0 1.2rem;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0 1.2rem 1rem;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .note {
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .note strong { color: var(--ink); }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="brand">SootheTap</span>
+    <h1>Frequently Asked Questions</h1>
+    <p class="intro">Got a question? We've compiled answers to the most common things our customers ask. Can't find what you need? <a href="contact-us.html" style="color:var(--accent);text-decoration:none;">Contact us</a> and we'll be happy to help.</p>
+
+    <!-- Orders -->
+    <div class="category-title">🛒 Orders</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        How do I place an order?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Simply select your preferred bundle and colour options on the product page, then click "Add to Cart" or "Buy It Now" to proceed to checkout. Follow the steps to enter your shipping details and complete payment securely.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Can I change or cancel my order after placing it?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Orders enter processing very quickly after being placed. If you need to make a change or cancel, please contact us at <a href="mailto:omerbuisnessacc@gmail.com" style="color:var(--accent);">omerbuisnessacc@gmail.com</a> as soon as possible. We cannot guarantee changes once an order has been dispatched.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Will I receive a confirmation email?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes! Once your order is placed, you will receive an order confirmation email at the address you provided during checkout. Please check your spam or junk folder if you don't see it within a few minutes.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        What payment methods do you accept?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">We accept Visa, Mastercard, American Express, Apple Pay, Google Pay, Shop Pay, and Klarna. All transactions are processed securely through our payment providers.</div>
+    </div>
+
+    <!-- Shipping -->
+    <div class="category-title">📦 Shipping</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        How long does shipping take?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Orders are typically dispatched within 24 hours of being placed. Standard delivery generally takes 7–15 business days depending on your location. Please visit our <a href="shipping-policy.html" style="color:var(--accent);">Shipping Policy</a> page for full details.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Do you offer free shipping?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes — we offer free worldwide shipping on all orders. No minimum spend required.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Do you ship internationally?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Absolutely. We ship to over 150 countries worldwide. Delivery times may vary depending on the destination country and local customs processing.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        How can I track my order?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Once your order has been dispatched, you will receive a tracking number by email. You can use this to follow your parcel in real time on our <a href="track-order.html" style="color:var(--accent);">Track Order</a> page.</div>
+    </div>
+
+    <!-- Product -->
+    <div class="category-title">🌿 Product</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        What colours are available?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Our Fuyun Plush Companion is available in Eggplant Purple, Warm Cream, Sage Green, and Dusty Rose. You can select your preferred colour when choosing your bundle on the product page.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Is the plush safe for babies and young children?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes. Fuyun plushies are made from hypoallergenic, eco-conscious materials that are safe for newborns and those with sensitive skin. As with all plush toys, we recommend adult supervision for very young children.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Can I wash the plush?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes — Fuyun plushies are machine washable. We recommend washing on a gentle cycle with cold water and allowing to air dry to maintain softness and shape.</div>
+    </div>
+
+    <!-- Returns -->
+    <div class="category-title">↩️ Returns & Refunds</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        What is your return policy?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">We offer a 30-day money-back guarantee for items that are defective, damaged, or not as described. Please visit our <a href="refund-policy.html" style="color:var(--accent);">Refund Policy</a> page for full information on how to initiate a return.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        My item arrived damaged. What should I do?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">We're sorry to hear that! Please contact us at <a href="mailto:omerbuisnessacc@gmail.com" style="color:var(--accent);">omerbuisnessacc@gmail.com</a> with your order number and photos of the damage. We'll make it right as quickly as possible.</div>
+    </div>
+
+    <div class="note">
+      <strong>Still have a question?</strong> Our support team is here to help. Reach out to us via our <a href="contact-us.html" style="color:var(--accent);text-decoration:none;">Contact page</a> and we'll get back to you as soon as possible.
+    </div>
+
+    <footer>
+      <a href="Index.html">Home</a>
+      <a href="privacy-policy-information.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact-us.html">Contact Us</a>
+      <p style="margin-top:0.8rem;">© 2026 SootheTap</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggle(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Returns – SootheTap</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2;
+      --ink: #1a1714;
+      --accent: #c97d4e;
+      --muted: #7a6f66;
+      --border: #e8e0d6;
+    }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      padding: 3rem 1.5rem;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .highlight {
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    .highlight strong { color: var(--accent); }
+    .section { margin-bottom: 2rem; }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .section p { margin-bottom: 0.8rem; color: var(--muted); }
+    .section p strong { color: var(--ink); }
+    .section ul { padding-left: 1.4rem; margin-bottom: 0.8rem; }
+    .section ul li { color: var(--muted); margin-bottom: 0.4rem; }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+    }
+    .step-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .step-text strong { display: block; font-weight: 500; color: var(--ink); font-size: 0.95rem; }
+    .step-text span { font-size: 0.87rem; color: var(--muted); }
+
+    .contact-box {
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .contact-box p { margin: 0; color: var(--muted); }
+    .contact-box a { color: var(--accent); }
+
+    .note {
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .note strong { color: var(--ink); }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="brand">SootheTap</span>
+    <h1>Returns</h1>
+
+    <div class="highlight">
+      We stand behind every Fuyun plush we sell. If something isn't right with your order, we offer a <strong>30-day money-back guarantee</strong> for items that are defective, damaged, or not as described.
+    </div>
+
+    <div class="section">
+      <h2>What Can Be Returned?</h2>
+      <p>We accept return requests for the following reasons:</p>
+      <ul>
+        <li>The item arrived damaged or defective.</li>
+        <li>The wrong item was sent to you.</li>
+        <li>The product does not match its description on our website.</li>
+      </ul>
+      <p>Returns are <strong>not accepted</strong> for the following:</p>
+      <ul>
+        <li>Change of mind or accidental orders (please double-check your order before confirming).</li>
+        <li>Items showing signs of misuse, accidental damage, or normal wear and tear.</li>
+        <li>Shipping delays caused by carriers once the order has been dispatched.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>How to Start a Return</h2>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-dot">1</div>
+          <div class="step-text">
+            <strong>Contact Us Within 30 Days</strong>
+            <span>Email us at <a href="mailto:omerbuisnessacc@gmail.com" style="color:var(--accent);">omerbuisnessacc@gmail.com</a> within 30 days of receiving your order.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">2</div>
+          <div class="step-text">
+            <strong>Include Your Order Details</strong>
+            <span>Provide your order number, a brief description of the issue, and photos or a short video if the item is damaged.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">3</div>
+          <div class="step-text">
+            <strong>We Review Your Request</strong>
+            <span>Our support team will review your request and respond within 1–3 business days with next steps.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">4</div>
+          <div class="step-text">
+            <strong>Return & Refund Processed</strong>
+            <span>If approved, we will provide return instructions. Once the item is received and inspected, your refund will be issued to your original payment method.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Refund Timelines</h2>
+      <p>Once your return has been approved and processed, please allow the following timeframes for your refund to appear:</p>
+      <ul>
+        <li><strong>Credit / Debit Card:</strong> 5–10 business days depending on your bank.</li>
+        <li><strong>Apple Pay / Google Pay / Shop Pay:</strong> 3–5 business days.</li>
+        <li><strong>Klarna:</strong> Please refer to Klarna's own refund policy for timing.</li>
+      </ul>
+      <p>You will receive a confirmation email once your refund has been issued from our end.</p>
+    </div>
+
+    <div class="section">
+      <h2>Exchanges</h2>
+      <p>We currently do not offer direct exchanges. If you received a defective or incorrect item and would like a replacement rather than a refund, please mention this when you contact us and we will do our best to accommodate your request.</p>
+    </div>
+
+    <div class="contact-box">
+      <p>📧 For all return enquiries, please email us at <a href="mailto:omerbuisnessacc@gmail.com">omerbuisnessacc@gmail.com</a> with your order number and details. You can also use our <a href="contact-us.html">Contact page</a>.</p>
+    </div>
+
+    <div class="note">
+      <strong>Note:</strong> All SootheTap products are fulfilled directly by our supplier. Items are shipped only after an order is placed. Return shipping instructions will be provided on a case-by-case basis once your request is approved.
+    </div>
+
+    <footer>
+      <a href="Index.html">Home</a>
+      <a href="privacy-policy-information.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact-us.html">Contact Us</a>
+      <p style="margin-top:0.8rem;">© 2026 SootheTap</p>
+    </footer>
+  </div>
+</body>
+</html>

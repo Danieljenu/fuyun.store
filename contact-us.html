@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – SootheTap</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2;
+      --ink: #1a1714;
+      --accent: #c97d4e;
+      --muted: #7a6f66;
+      --border: #e8e0d6;
+    }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      padding: 3rem 1.5rem;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+    .email-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-top: 0.5rem;
+      font-size: 1.05rem;
+    }
+    .email-card .icon { font-size: 1.3rem; }
+    .email-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .email-card a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="brand">SootheTap</span>
+    <h1>Contact Us</h1>
+
+    <p>Have any questions, concerns, or just want to say hi? I'm here to help! Feel free to reach out anytime, and I'll get back to you as soon as possible.</p>
+
+    <div class="email-card">
+      <span class="icon">📧</span>
+      <span>Email: <a href="mailto:tapcosoothe@gmail.com">tapcosoothe@gmail.com</a></span>
+    </div>
+
+    <footer>
+      <a href="privacy-policy-information.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact-us.html">Contact Us</a>
+      <p style="margin-top:0.8rem;">© 2026 SootheTap</p>
+    </footer>
+  </div>
+</body>
+</html>

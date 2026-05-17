@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track Your Order – SootheTap</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2;
+      --ink: #1a1714;
+      --accent: #c97d4e;
+      --muted: #7a6f66;
+      --border: #e8e0d6;
+    }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      padding: 3rem 1.5rem;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* Track form */
+    .track-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .track-box label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .track-box input {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--cream);
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .track-box input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .track-box input::placeholder { color: #bbb; }
+    .btn-track {
+      width: 100%;
+      background: var(--ink);
+      color: var(--cream);
+      border: none;
+      border-radius: 50px;
+      padding: 14px 32px;
+      font-size: 0.97rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-track:hover { background: #2d2d4e; transform: translateY(-1px); }
+
+    /* Result area */
+    .result-box {
+      display: none;
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+    .result-box.show { display: block; }
+    .result-box strong { color: var(--ink); }
+
+    /* Steps info */
+    .section { margin-bottom: 2rem; }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .step-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .step-text strong { display: block; font-weight: 500; color: var(--ink); font-size: 0.95rem; }
+    .step-text span { font-size: 0.85rem; color: var(--muted); }
+
+    .note {
+      background: #fff8f3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .note strong { color: var(--ink); }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="brand">SootheTap</span>
+    <h1>Track Your Order</h1>
+    <p class="intro">Enter your order number and email address below to check the status of your delivery. You'll receive a tracking number by email once your order has been dispatched.</p>
+
+    <div class="track-box">
+      <label for="orderNum">Order Number</label>
+      <input type="text" id="orderNum" placeholder="e.g. ST-10045" />
+
+      <label for="orderEmail">Email Address</label>
+      <input type="email" id="orderEmail" placeholder="you@example.com" />
+
+      <button class="btn-track" onclick="trackOrder()">🔍 Track My Order</button>
+
+      <div class="result-box" id="resultBox">
+        <strong>We've received your request.</strong><br/>
+        If your order number and email match our records, you will receive a tracking update at your email address shortly. Please also check your spam or junk folder if you don't hear from us within a few minutes.<br/><br/>
+        For further assistance, feel free to <a href="contact-us.html" style="color:var(--accent);">contact our support team</a>.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>What happens after I order?</h2>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-dot">1</div>
+          <div class="step-text">
+            <strong>Order Confirmed</strong>
+            <span>You receive a confirmation email immediately after placing your order.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">2</div>
+          <div class="step-text">
+            <strong>Processing & Packing</strong>
+            <span>Your order is prepared and packed by our fulfilment team, typically within 24 hours.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">3</div>
+          <div class="step-text">
+            <strong>Dispatched</strong>
+            <span>Your parcel is handed to the carrier and you receive a tracking number by email.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">4</div>
+          <div class="step-text">
+            <strong>Out for Delivery</strong>
+            <span>Your order is on its way to you. Standard delivery takes 7–15 business days depending on your location.</span>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-dot">5</div>
+          <div class="step-text">
+            <strong>Delivered!</strong>
+            <span>Your Fuyun plush companion arrives at your door, ready to soothe.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Haven't received your tracking email?</strong> Please allow up to 24 hours after placing your order. If you still haven't received anything, <a href="contact-us.html" style="color:var(--accent);text-decoration:none;">get in touch with us</a> and we'll look into it right away.
+    </div>
+
+    <footer>
+      <a href="Index.html">Home</a>
+      <a href="privacy-policy-information.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact-us.html">Contact Us</a>
+      <p style="margin-top:0.8rem;">© 2026 SootheTap</p>
+    </footer>
+  </div>
+
+  <script>
+    function trackOrder() {
+      const num = document.getElementById('orderNum').value.trim();
+      const email = document.getElementById('orderEmail').value.trim();
+      const box = document.getElementById('resultBox');
+      if (!num || !email) {
+        box.style.background = '#fff0f0';
+        box.innerHTML = '<strong>Please fill in both fields</strong> — your order number and email address are required to track your order.';
+        box.classList.add('show');
+        return;
+      }
+      box.style.background = '#fff8f3';
+      box.innerHTML = '<strong>We\'ve received your request.</strong><br/>If your order number and email match our records, you will receive a tracking update at your email address shortly. Please also check your spam or junk folder if you don\'t hear from us within a few minutes.<br/><br/>For further assistance, feel free to <a href="contact-us.html" style="color:var(--accent);">contact our support team</a>.';
+      box.classList.add('show');
+    }
+  </script>
+</body>
+</html>
